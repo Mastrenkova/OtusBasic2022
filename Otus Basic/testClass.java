@@ -18,7 +18,6 @@ class Blok {
 	}
 
 	public void test() {
-		
 		Scanner answer = new Scanner(System.in);
 			while ((number = answer.nextInt()) > 3 || number < 1) {
 			System.out.println("Некорректный ввод данных");
