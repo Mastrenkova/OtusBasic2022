@@ -8,15 +8,14 @@ public class bubbleSort {
 
 	static void createList() {
 		Random id = new Random();
-		for (int i = 0; i < 1000; i++) {
-			list.add(id.nextInt(1000));
+		for (int i = 0; i < 10000; i++) {
+			list.add(id.nextInt(15000));
 		}
 	}
 
 	public static List<Integer> bubbleSort() {
 		Integer temp;
 		boolean sorted = false;
-		createList();
 		while (!sorted) {
 			sorted = true;
 			for (int i = 0; i < list.size() - 1; i++) {
@@ -37,12 +36,12 @@ public class bubbleSort {
 	}
 
 	public static void time() {
-		
+
 		long startTimeBubbleSort = System.currentTimeMillis();
 		bubbleSort();
 		long endTimeBubbleSort = System.currentTimeMillis();
 		System.out.println("Sum BubbleSort: " + (endTimeBubbleSort - startTimeBubbleSort) + " milliseconds");
-
+	
 		long startTimeCollectionSort = System.currentTimeMillis();
 		collectionSort();
 		long endTimeCollectionSort = System.currentTimeMillis();
@@ -50,6 +49,7 @@ public class bubbleSort {
 	}
 
 	public static void main(String args[]) {
+		createList();
 		System.out.println(bubbleSort());
 		System.out.println(collectionSort());
 		time();
